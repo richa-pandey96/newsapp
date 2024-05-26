@@ -30,7 +30,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   http: ^1.2.1
   cached_network_image: ^3.3.1
 
@@ -40,9 +39,20 @@ dependencies:
   cupertino_icons: ^1.0.2
   webview_flutter: ^4.7.0
 
+  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+
+
+flutter_icons:
+  android: "ic_launcher"
+  ios: true
+  image_path: "assets/icon.png"
+  
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

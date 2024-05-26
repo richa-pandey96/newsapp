@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:newsapp/views/web_view.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class ArticleView extends StatefulWidget {
@@ -33,12 +34,12 @@ class _ArticleViewState extends State<ArticleView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Hot",
+              "News",
               style:
               TextStyle(color: Colors.red, fontWeight: FontWeight.w600,fontSize: 30),
             ),
             Text(
-              " News",
+              "Town",
               style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600,fontSize: 30),
             )
           ],
@@ -56,15 +57,11 @@ class _ArticleViewState extends State<ArticleView> {
       body: _isloading?Center(child: CircularProgressIndicator()): Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        // child: WebView(
-        //   initialUrl:  widget.blogUrl,
-        //   onWebViewCreated: (WebViewController webViewController){
-        //     _controller.complete(webViewController);
-        //   },
-        //   ),
-        
-     ),
-);
+      child: WebViewContainer(url: widget.blogUrl,),    
+));
 }
 }
+
+// WebView({required String initialUrl, required Null Function(WebViewController webViewController) onWebViewCreated}) {
+// }
 

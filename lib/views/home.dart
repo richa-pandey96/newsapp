@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 //import 'package:flutter/widgets.dart';
@@ -6,6 +7,7 @@ import 'package:newsapp/helper/news.dart';
 import 'package:newsapp/models/category_models.dart';
 import'package:newsapp/models/articles_model.dart';
 import 'package:newsapp/views/article_views.dart';
+import 'package:newsapp/views/category_news.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -47,11 +49,13 @@ class _HomeState extends State<Home> {
         title: Row(
           mainAxisAlignment:MainAxisAlignment.center ,
           children: [
-            Text('Flutter'),
+            Text('News' ,
+            style: TextStyle(color: Colors.red,fontWeight: FontWeight.w600,fontSize: 30),            
+            ),
             Text(
-              'News',
+              'Town',
               style: TextStyle(
-              color: Colors.blue,
+              color: Colors.blue,fontWeight: FontWeight.w600,fontSize: 30
             ),
             ),
           ],
@@ -116,6 +120,7 @@ class CategoryTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
+        Navigator.push(context,MaterialPageRoute(builder: (context)=>CategoryNews(category:categoryName.toLowerCase())));
 
       },
       child: Container(
@@ -124,7 +129,7 @@ class CategoryTile extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
-                child: Image.network(imageUrl, width: 120,height: 60, fit: BoxFit.cover,)
+                child: CachedNetworkImage(imageUrl:imageUrl, width: 120,height: 60, fit: BoxFit.cover,)
             ),
             Container(
               alignment: Alignment.center,
@@ -146,6 +151,9 @@ class CategoryTile extends StatelessWidget {
       ),
     );
   }
+}
+
+CateogryNews({required String category}) {
 }
 
 class BlogTile extends StatelessWidget {

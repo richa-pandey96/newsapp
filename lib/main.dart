@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/views/home.dart';
+// ignore: unused_import
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());

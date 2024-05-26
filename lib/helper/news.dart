@@ -5,7 +5,7 @@ class News{
   List<ArticleModel> news=[];
 
   Future<void> getNews() async {
-    var url =Uri.parse("https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=2000422e3f5b4ba0a3bd40d7c6093bc");
+    var url =Uri.parse("https://newsapi.org/v2/top-headlines?country=in&apiKey=2000422e3f5b4ba0a3bd40d7c6093bca");
     var response =await http.get(url);
     var jsonData = jsonDecode(response.body);
 
@@ -39,7 +39,7 @@ class CategoryNewsClass {
     print(category);
     print(category.length);
 
-    var url =Uri.parse('http://newsapi.org/v2/top-headlines?category=$category&country=ph&category=business&apiKey=3699636a771049aca38ea30dd4ac1344');
+    var url =Uri.parse('http://newsapi.org/v2/top-headlines?country=in&category=$category&apiKey=3699636a771049aca38ea30dd4ac1344');
 
     var response = await http.get(url);
 
